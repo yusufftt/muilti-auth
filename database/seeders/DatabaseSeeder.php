@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Product;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -18,5 +19,20 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+        $this->call([
+            PermissionSeeder::class,
+            RoleSeeder::class,
+            SuperAdminSeeder::class
+        ]);
+
+        Product::create([
+            'name' => 'Semangka',
+            'description' => 'Lorem ipsum dolor sit amet.'
+        ]);
+
+        Product::create([
+            'name' => 'Pepaya',
+            'description' => 'Lorem ipsum dolor sit amet.'
+        ]);
     }
 }

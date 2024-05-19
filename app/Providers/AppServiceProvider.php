@@ -2,6 +2,10 @@
 
 namespace App\Providers;
 
+use App\Models\User;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -19,6 +23,18 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        Paginator::useBootstrapFive();
+
+        view()->composer('*', function ($view) {
+            if (Auth::check()) {
+                View::share([
+                    'userGlobal' => User::find(Auth::user()->id),
+                    'judul' => 'E-Office',
+                    'footer' => 'E-Office Production 2024'
+                ]);
+            } else {
+                $view->with('userGlobal', null);
+            }
+        });
     }
 }
