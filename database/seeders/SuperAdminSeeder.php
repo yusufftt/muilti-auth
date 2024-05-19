@@ -60,12 +60,12 @@ class SuperAdminSeeder extends Seeder
         $mahasiswa->assignRole('Mahasiswa');
 
         // tugas AdminLTE
-        // $admin_lte = User::create([
-        //     'name' => 'AdminLTE',
-        //     'email' => 'adminlte@roles.id',
-        //     'password' => Hash::make('123456'),
-        //     'type' => 4
-        // ]);
-        // $admin_lte->assignRole('Admin LTE');
+        $admin_lte = User::create([
+            'name' => 'AdminLTE',
+            'email' => 'adminlte@roles.id',
+            'password' => Hash::make('123456'),
+            'type' => 4
+        ]);
+        $admin_lte->assignRole('Admin LTE');
     }
 }

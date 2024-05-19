@@ -1,4 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.backend')
+
+@section('title', 'Halaman Dashboard')
+
 @section('content')
 <div class="card-body">
     @can('create-user')

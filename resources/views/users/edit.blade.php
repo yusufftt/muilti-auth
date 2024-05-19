@@ -1,4 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.backend')
+
+@section('title', 'Halaman Dashboard')
+
 @section('content')
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -18,7 +21,8 @@
                         <div class="mb-3 row">
                             <label for="name" class="col-md-4 col-form-label text-md-end text-start">Name</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control @error('name') is-invalid @enderror"
+                                <input type="text"
+                                    class="form-control @error('name') is-invalid @enderror"
                                     id="name" name="name" value="{{ $user->name }}">
                                 @if ($errors->has('name'))
                                     <span class="text-danger">{{ $errors->first('name') }}</span>
@@ -26,8 +30,7 @@
                             </div>
                         </div>
                         <div class="mb-3 row">
-                            <label for="email" class="col-md-4 col-form-label text-md-end text-start">Email
-                                Address</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-end text-start">Email Address</label>
                             <div class="col-md-6">
                                 <input type="email" class="form-control @error('email') is-invalid @enderror"
                                     id="email" name="email" value="{{ $user->email }}">

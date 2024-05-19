@@ -31,10 +31,10 @@ class PermissionSeeder extends Seeder
             'show-mahasiswa',
 
             //mengikuti tugas Admin LTE
-            // 'show-permission',
-            // 'create-permission',
-            // 'edit-permission',
-            // 'delete-permission'
+            'show-permission',
+            'create-permission',
+            'edit-permission',
+            'delete-permission'
         ];
         //looping and inserting Array's Permissions
         foreach($permissions as $permission){
