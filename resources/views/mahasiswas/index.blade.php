@@ -1,4 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.backend')
+
+@section('title', 'Manage Mahasiswa')
+
 @section('content')
     <div class="card">
         <div class="card-header">Mahasiswa List</div>

@@ -1,4 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.backend')
+@section('title', 'Manage Users')
+
 @section('content')
 <div class="card-body">
     @can('create-user')

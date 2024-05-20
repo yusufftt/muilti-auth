@@ -1,4 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.backend')
+@section('title', 'Manage Roles')
+
 
 @section('content')
     <div class="row justify-content-center">

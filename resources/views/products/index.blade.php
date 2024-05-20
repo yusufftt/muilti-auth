@@ -1,4 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.backend')
+
+@section('title', 'Manage Product')
+
 @section('content')
     <div class="card">
         <div class="card-header">Product List</div>
