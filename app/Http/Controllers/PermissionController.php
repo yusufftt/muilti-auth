@@ -26,7 +26,7 @@ class PermissionController extends Controller
      */
     public function index()
     {
-        $mysqli = new mysqli('localhost', 'root', '', 'pwl');
+        $mysqli = new mysqli('localhost', 'root', '', 'laravel-roles');
         // Check connection
         if ($mysqli->connect_errno) {
             echo "Failed to connect to MySQL: " . $mysqli->connect_error;
@@ -71,6 +71,9 @@ class PermissionController extends Controller
         $permission = Permission::create(['name' => $request->name]);
         foreach ($request->roles as $role) {
             $role = Role::get(['*'])->where('id', '=', $role)->first();
+            // dd($permission);
+            // dd($role);
+
             $role->givePermissionTo($permission);
         }
         return redirect()->route('permissions.index')->withSuccess('New permission is added successfully.');

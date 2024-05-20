@@ -105,13 +105,13 @@ with font-awesome or any other icon font library -->
                                 </a>
                             </li>
                         @endcanany
-                        @canany(['create-role, edit-role, delete-role, show-role'])
+                        @canany(['create-permission', 'edit-permission', 'delete-permission', 'show-permission'])
                             <li class="nav-item">
                                 {{-- <a href="{{ url('home') }}" class="nav-link {{ set_active('home') }}"> --}}
                                 <a href="{{ url('crud-permission') }}"
                                     class="nav-link {{ request()->is('crud-permission') || request()->is('permissions/*') ? 'active' : '' }}">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>manage CRUD</p>
+                                    <p>Manage Permissions</p>
                                 </a>
                             </li>
                         @endcanany
