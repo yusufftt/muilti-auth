@@ -56,12 +56,12 @@ class RoleSeeder extends Seeder
         ]);
 
         // AdminLTE
-        // $admin_lte = Role::create(['name' => 'Admin LTE']);
-        // $admin_lte->givePermissionTo([
-        //     'show-permission',
-        //     'create-permission',
-        //     'edit-permission',
-        //     'delete-permission'
-        // ]);
+        $admin_lte = Role::create(['name' => 'Admin LTE']);
+        $admin_lte->givePermissionTo([
+            'show-permission',
+            'create-permission',
+            'edit-permission',
+            'delete-permission'
+        ]);
     }
 }
