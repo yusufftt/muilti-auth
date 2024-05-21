@@ -15,8 +15,7 @@
                     <form action="{{ route('roles.store') }}" method="post">
                         @csrf
                         <div class="mb-3 row">
-                            <label for="name"
-                                class="col-md-4 col-form-label text-md-end text-start">Name</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-end text-start">Name</label>
                             <div class="col-md-6">
                                 <input type="text" class="form-control @error('name') is-invalid @enderror"
                                     id="name" name="name" value="{{ old('name') }}">
@@ -26,7 +25,11 @@
                             </div>
                         </div>
                         <div class="mb-3 row">
-                            <label for="permissions" class="col-md-4 col-form-label text-md-end text-start">Permissions</label>
+                            <div class="col-md-4 text-md-end">
+                                <label for="permissions" class="col-form-label  text-start">Permissions</label>
+                                <div class="fw-light fs-6 font-monospace">Hold down the Ctrl (windows) or Command (Mac)
+                                    button to select multiple options.</div>
+                            </div>
                             <div class="col-md-6">
                                 <select class="form-select @error('permissions') is-invalid @enderror" multiple
                                     aria-label="Permissions" id="permissions" name="permissions[]" style="height: 210px;">
