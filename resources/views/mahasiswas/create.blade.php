@@ -15,7 +15,7 @@
                         <a href="{{ route('mahasiswas.index') }}" class="btn btn-primary btn-sm">&larr; Back</a>
                     </div>
                 </div>
-                {{-- <div>
+                <div>
                     @if ($errors->any())
                         <div class="alert alert-danger">
                             <ul>
@@ -25,7 +25,7 @@
                             </ul>
                         </div>
                     @endif
-                </div> --}}
+                </div>
                 <div class="card-body">
                     <form action="{{ route('mahasiswas.store') }}" method="post">
                         @csrf
@@ -68,33 +68,6 @@
                                     name="password_confirmation">
                             </div>
                         </div>
-                        {{-- <div class="mb-3 row">
-                            <label for="roles" class="col-md-4 col-form-label text-md-end text-start">Roles</label>
-                            <div class="col-md-6">
-                                <select class="form-select @error('roles') is-invalid @enderror" multiple aria-label="Roles"
-                                    id="roles" name="roles[]">
-                                    @forelse ($roles as $role)
-                                        @if ($role != 'Super Admin')
-                                            <option value="{{ $role }}"
-                                                {{ in_array($role, old('roles') ?? []) ? 'selected' : '' }}>
-                                                {{ $role }}
-                                            </option>
-                                        @else
-                                            @if (Auth::user()->hasRole('Super Admin'))
-                                                <option value="{{ $role }}"
-                                                    {{ in_array($role, old('roles') ?? []) ? 'selected' : '' }}>
-                                                    {{ $role }}
-                                                </option>
-                                            @endif
-                                        @endif
-                                    @empty
-                                    @endforelse
-                                </select>
-                                @if ($errors->has('roles'))
-                                    <span class="text-danger">{{ $errors->first('roles') }}</span>
-                                @endif
-                            </div>
-                        </div> --}}
                         <div class="mb-3 row">
                             <label for="jurusan" class="col-md-4 col-form-label text-md-end text-start">Jurusan</label>
                             <div class="col-md-6">

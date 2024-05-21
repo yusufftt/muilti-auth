@@ -38,6 +38,7 @@
                                 <select class="form-select @error('roles') is-invalid @enderror" multiple
                                     aria-label="roles" id="roles" name="roles[]" style="height:210px;">
                                     @forelse ($roles as $role)
+                                    @continue($role->name == 'Super Admin')
                                         <option value="{{ $role->id }}"
                                             {{ in_array($role->id, old('roles') ?? []) ? 'selected' : '' }}>
                                             {{ $role->name }}
