@@ -24,7 +24,8 @@ class UpdateUserRequest extends FormRequest
         // dd($this->user);    
         return [
             'name' => 'required|string|max:250',
-            'email' => ["required","string","regex:/(.+)@(.+)\.(.+)/i","max:250","unique:users,email".$this->user->id],
+            'email' => 'required|string|email:rfc,dns|max:250|unique:users,email,'.$this->user->id,
+            // 'email' => 'required|string|email:rfc,dns|max:250|unique:users,email',
             'password' => 'nullable|string|min:8|confirmed',
             'roles' => 'required'            
         ];

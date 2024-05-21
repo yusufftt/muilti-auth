@@ -1,6 +1,6 @@
 @extends('layouts.backend')
 
-@section('title', 'Halaman Dashboard')
+@section('title', 'Mahasiswa Show')
 
 @section('content')
     <div class="row justify-content-center">

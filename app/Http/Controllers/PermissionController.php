@@ -26,7 +26,7 @@ class PermissionController extends Controller
      */
     public function index()
     {
-        $mysqli = new mysqli('localhost', 'root', '', 'laravel-roles');
+        $mysqli = new mysqli('localhost', 'root', '', 'multi_auth');
         // Check connection
         if ($mysqli->connect_errno) {
             echo "Failed to connect to MySQL: " . $mysqli->connect_error;

@@ -1,6 +1,6 @@
 @extends('layouts.backend')
+@section('title', 'CRUD Permission')
 
-@section('title', 'Halaman Dashboard')
 
 @section('content')
     <div class="row justify-content-center">
@@ -38,6 +38,7 @@
                                 <select class="form-select @error('roles') is-invalid @enderror" multiple
                                     aria-label="roles" id="roles" name="roles[]" style="height:210px;">
                                     @forelse ($roles as $role)
+                                    @continue($role->name == 'Super Admin')
                                         <option value="{{ $role->id }}"
                                             {{ in_array($role->id, old('roles') ?? []) ? 'selected' : '' }}>
                                             {{ $role->name }}
@@ -52,7 +53,7 @@
                             </div>
                         </div>
                         <div class="mb-3 row">
-                            <input type="submit" class="col-md-3 offset-md-5 btn btn-primary" value="Update Role">
+                            <input type="submit" class="col-md-3 offset-md-5 btn btn-primary" value="Update Permission">
                         </div>
                     </form>
                 </div>
